@@ -4,7 +4,10 @@
 
 ---
 
-![サンプルユースケース](/documents/sample-usecase.mov)
+<img width="500" alt="スクリーンショット 2025-08-22 14 32 22" src="https://github.com/user-attachments/assets/5fbd1b9a-4613-4b11-92b1-dd745d33c00e" />
+<img width="500" alt="スクリーンショット 2025-08-22 14 32 57" src="https://github.com/user-attachments/assets/fbcb192e-341e-4c65-b78e-60126803cb2d" />
+<img width="500" alt="スクリーンショット 2025-08-22 14 33 08" src="https://github.com/user-attachments/assets/2c2327fd-017f-4c7f-ac2c-dd2dbe01903a" />
+
 
 ## 概要 (Overview)
 
