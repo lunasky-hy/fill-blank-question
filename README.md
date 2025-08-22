@@ -33,7 +33,7 @@
 
 - **Frontend**: React.js
 - **Styling**: TailwindCSS, ReactMarkdown, etc...
-- **Deployment**: GitHub Pages -> [Access here]()
+- **Deployment**: GitHub Pages -> [Access here](https://lunasky-hy.github.io/fill-blank-question/)
 
 ## ローカルでの開発 (Development)
 
