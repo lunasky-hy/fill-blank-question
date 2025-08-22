@@ -1,69 +1,54 @@
-# React + TypeScript + Vite
+# FillBlank
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**お手持ちのマークダウンから、驚くほど簡単に穴埋め問題を作成できるWebアプリケーションです。**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![サンプルユースケース](/documents/sample-usecase.mov)
 
-## Expanding the ESLint configuration
+## 概要 (Overview)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+`FillBlank`（仮）は、学習したい内容をまとめたマークダウンテキストから、シームレスに穴埋め問題（クローズテスト）を作成するためのツールです。
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+普段お使いのノートアプリで作成したマークダウンをそのまま貼り付け、問題にしたい単語をマウスで選択するだけで、面倒な編集作業なしに学習用コンテンツを生成できます。資格試験の暗記や、プログラミング用語の学習などに最適です。
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 特徴 (Features)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **📝 マークダウン対応**: 見出し、リスト、コードブロックなど、基本的なマークダウン記法に対応。
+- **🖱️ 簡単な操作**: テキストを貼り付けて、隠したい単語を選択するだけの直感的なUI。
+- **✨ 即時プレビュー**: 作成した穴埋め問題がリアルタイムでプレビューされます。
+- **💻 レスポンシブデザイン**: PCでもスマートフォンでも快適に利用できます。
+
+## 使い方 (Usage)
+
+1.  **テキストをペースト**: 左側のエディタに、お使いのマークダウンテキストを貼り付けます。
+2.  **単語を選択**: 穴埋めにしたい単語をマウスでドラッグして選択します。
+3.  **変換**: 自動的に選択した単語が穴埋め形式に変換されます。
+4.  **コピー**: 生成されたテキストをコピーして、Ankiや他の学習ツールで活用します。
+
+## 使用技術 (Tech Stack)
+
+- **Frontend**: React.js
+- **Styling**: TailwindCSS, ReactMarkdown, etc...
+- **Deployment**: GitHub Pages -> [Access here]()
+
+## ローカルでの開発 (Development)
+
+このプロジェクトをローカル環境で動かすには、以下の手順に従ってください。
+
+```bash
+# 1. リポジトリをクローン
+git clone <リポジトリのURL>
+
+# 2. プロジェクトディレクトリに移動
+cd <リポジトリ名>
+
+# 3. 依存関係をインストール
+npm install
+
+# 4. 開発サーバーを起動
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+ブラウザで http://localhost:3000 を開いてください。
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
