@@ -142,6 +142,33 @@ function App() {
   }, [viewMode, quizText, highlightedText]);
   console.log(previewContent);
 
+  /**
+   * 問題と解答をMarkdownファイルとしてエクスポートする関数
+   */
+  const handleExport = () => {
+    if (viewMode !== 'quiz' || quizAnswers.length === 0) return;
+
+    // ファイルに出力するMarkdownコンテンツを作成
+    let fileContent = `# 穴埋め問題\n\n`;
+    fileContent += quizText;
+    fileContent += `\n\n---\n\n# 解答\n\n`;
+
+    quizAnswers.forEach(answer => {
+      fileContent += `**(${answer.number})**: ${answer.word}\n`;
+    });
+
+    // Blobを作成してダウンロードリンクを生成
+    const blob = new Blob([fileContent], { type: 'text/markdown;charset=utf-8;' });
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
+    link.setAttribute("download", "quiz.md");
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="flex flex-col h-screen w-screen bg-gray-100 font-sans text-gray-800">
       {/* ヘッダー */}
@@ -219,6 +246,14 @@ function App() {
                   穴埋め問題表示モード
                 </button>
               </div>
+              {/* ファイル出力ボタン */}
+              <button
+                onClick={handleExport}
+                disabled={viewMode !== 'quiz' || quizAnswers.length === 0}
+                className="ml-2 px-4 py-2 text-sm font-medium bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition whitespace-nowrap"
+              >
+                ファイル出力 (.md)
+              </button>
             </div>
             {/* プレビューと解答のコンテナ */}
             <div className="flex flex-col flex-1 min-h-0 gap-4">
