@@ -17,3 +17,100 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+@layer base {
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10px 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 12px 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+  h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+    margin: 12px 0;
+  }
+  h4 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 12px 0;
+  }
+  h5 {
+    font-size: 0.83em;
+    font-weight: bold;
+    margin: 12px 0;
+  }
+  h6 {
+    font-size: 0.67em;
+    font-weight: bold;
+    margin: 12px 0;
+  }
+  ul,ol {
+    margin: 10px 2em;
+    padding: 0;
+    list-style: none;
+  }
+  ul > li {
+    list-style-type: circle;
+    margin-bottom: 0.5em;
+  }
+  ul > li ul > li {
+    list-style-type: square;
+  }
+  ul > li ul > li ul > li {
+    list-style-type: disc;
+  }
+  ol > li {
+    list-style-type: decimal;
+    margin-bottom: 0.5em;
+  }
+  ol > li ol > li {
+    list-style-type: lower-roman;
+    margin-bottom: 0.5em;
+  }
+  ol > li ol > li ol > li  {
+    list-style-type: lower-alpha;
+    margin-bottom: 0.5em;
+  }
+  pre {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em;
+    border-radius: 8px;
+    margin-bottom: 0.5em;
+  }
+  table {
+    border: 1px solid #666;
+    border-collapse: collapse;
+    margin: 1em 0;
+  }
+  table > thead {
+    font-weight: bold;
+  }
+  table tr {
+    border: 1px solid #666;
+  }
+  tr th {
+    border: 1px solid #666;
+    padding: 0.2em 1em;
+  }
+  tr td {
+    border: 1px solid #666;
+    padding: 0.2em 1em;
+  }
+}
+
+span.question-target {
+  font-weight: bold;
+  color: #f52;
+}
